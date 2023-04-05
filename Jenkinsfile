@@ -13,9 +13,9 @@ node {
     }
 
     stage('Run image') {
-        docker.image('srv-web').withRun('-p 800:80 --name srv_web' ) { c ->
+        docker.image('$IMAGE').withRun('-p 800:80 --name $IMAGE' ) { c ->
 
-        sh 'docker ps | grep srv_web'
+        sh 'docker ps | grep $IMAGE'
       }
 
     }
